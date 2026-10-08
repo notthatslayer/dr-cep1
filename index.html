@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Ready</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-brand">
+            <h1>Disaster Ready</h1>
+            <span class="nav-subtitle">Community Preparedness</span>
+        </div>
+        <nav class="nav-links">
+            <button class="nav-btn active" data-target="home">Home</button>
+            <button class="nav-btn" data-target="disasters">Disasters</button>
+            <button class="nav-btn" data-target="checklist">Checklist</button>
+            <button class="nav-btn" data-target="kit">Emergency Kit</button>
+            <button class="nav-btn" data-target="alerts">Alerts</button>
+            <button class="nav-btn" data-target="quiz">Quiz</button>
+            <button class="nav-btn" data-target="challenges">Challenges</button>
+            <button class="nav-btn" data-target="contacts">Contacts</button>
+        </nav>
+        <div class="nav-actions">
+            <button id="emergency-mode-btn" class="emergency-mode-trigger">Emergency Mode</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="content-section active">
+            <div class="hero-card">
+                <h2>Disaster Ready</h2>
+                <p class="hero-subtitle">Know what to do before, during, and after an emergency.</p>
+                <p class="hero-desc">An educational community engagement project designed to help students, families, and ordinary citizens build resilience, understand common hazards, and prepare effectively.</p>
+                
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="switchSection('disasters')">Learn About Disasters</button>
+                    <button class="secondary-btn" onclick="switchSection('checklist')">Emergency Checklist</button>
+                    <button class="secondary-btn" onclick="switchSection('quiz')">Take Safety Quiz</button>
+                    <button class="tertiary-btn" onclick="switchSection('alerts')">Alerts and Information</button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Practical Guides</h3>
+                    <p>Clear instructions for floods, earthquakes, fires, cyclones, heatwaves, and landslides.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Interactive Checklist</h3>
+                    <p>Track your household preparedness items with saved progress.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Knowledge Testing</h3>
+                    <p>Test your understanding through quizzes and real world scenario challenges.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISASTER INFORMATION SECTION -->
+        <section id="disasters" class="content-section">
+            <h2>Disaster Information Guide</h2>
+            <p class="section-desc">Select a disaster below to learn essential safety steps for before, during, and after an emergency.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-disaster="flood">Flood</button>
+                <button class="filter-btn" data-disaster="earthquake">Earthquake</button>
+                <button class="filter-btn" data-disaster="fire">Fire</button>
+                <button class="filter-btn" data-disaster="cyclone">Cyclone</button>
+                <button class="filter-btn" data-disaster="heatwave">Heatwave</button>
+                <button class="filter-btn" data-disaster="landslide">Landslide</button>
+            </div>
+
+            <div id="disaster-display-area" class="disaster-card-container">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </section>
+
+        <!-- CHECKLIST SECTION -->
+        <section id="checklist" class="content-section">
+            <h2>Emergency Preparedness Checklist</h2>
+            <p class="section-desc">Tick off items as you gather them. Your progress is saved automatically on this device.</p>
+            
+            <div class="progress-box">
+                <span id="checklist-progress-text">0 / 9 items ready</span>
+                <div class="progress-bar-bg">
+                    <div id="checklist-progress-fill" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div id="checklist-items-container" class="checklist-grid">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </section>
+
+        <!-- EMERGENCY KIT SECTION -->
+        <section id="kit" class="content-section">
+            <h2>Emergency Kit Guide</h2>
+            <p class="section-desc">Essential items recommended for a standard household emergency survival kit.</p>
+            
+            <div class="kit-grid">
+                <div class="kit-card">
+                    <h3>Drinking Water</h3>
+                    <p>Store at least 3 litres of water per person per day for drinking and sanitation.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Non-Perishable Food</h3>
+                    <p>Keep ready-to-eat canned food, energy bars, and dried items that require no cooking.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>First Aid Supplies</h3>
+                    <p>Bandages, antiseptic wipes, sterile gauze, scissors, tape, and pain relievers.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Torch and Batteries</h3>
+                    <p>Reliable flashlights with extra batteries or hand-crank options for power failures.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Power Bank</h3>
+                    <p>Fully charged portable power banks to keep communication devices operational.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Important Documents</h3>
+                    <p>Copies of ID proofs, insurance papers, and contact numbers kept in a waterproof pouch.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Basic Medicines</h3>
+                    <p>Personal prescription medications, oral rehydration salts, and basic fever reducers.</p>
+                </div>
+                <div class="kit-card">
+                    <h3>Whistle</h3>
+                    <p>Useful for signaling rescuers if you are trapped or unable to call out loudly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALERTS SECTION -->
+        <section id="alerts" class="content-section">
+            <h2>Demo Alert System</h2>
+            <p class="section-desc">This section demonstrates how emergency notification interfaces appear. These are simulated demo alerts and do not reflect live meteorological feeds.</p>
+            
+            <div class="alerts-container">
+                <div class="alert-box advisory">
+                    <div class="alert-header">
+                        <span class="badge advisory">Preparedness Advisory</span>
+                        <span class="alert-time">Simulated Data</span>
+                    </div>
+                    <h3>Heavy Rainfall and Waterlogging Notice</h3>
+                    <p>Heavy rainfall may cause temporary waterlogging in low-lying urban areas. Ensure drainage paths around homes are clear and avoid walking through moving floodwaters.</p>
+                </div>
+
+                <div class="alert-box warning">
+                    <div class="alert-header">
+                        <span class="badge warning">Sample Warning</span>
+                        <span class="alert-time">Simulated Data</span>
+                    </div>
+                    <h3>Heatwave Temperature Surge</h3>
+                    <p>Daytime temperatures are expected to exceed normal ranges. Stay hydrated, wear light clothing, and avoid direct sun exposure during peak afternoon hours.</p>
+                </div>
+
+                <div class="alert-box info">
+                    <div class="alert-header">
+                        <span class="badge info">General Information</span>
+                        <span class="alert-time">Simulated Data</span>
+                    </div>
+                    <h3>Cyclone Preparedness Drill</h3>
+                    <p>Coastal districts are advised to review evacuation routes and secure loose outdoor roofing sheets or debris.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="content-section">
+            <h2>Safety Preparedness Quiz</h2>
+            <p class="section-desc">Test your knowledge on disaster response and safety protocols.</p>
+            
+            <div id="quiz-container" class="quiz-box">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </section>
+
+        <!-- CHALLENGES SECTION -->
+        <section id="challenges" class="content-section">
+            <h2>What Would You Do?</h2>
+            <p class="section-desc">Evaluate these short emergency scenarios and choose the correct immediate action.</p>
+            
+            <div id="challenges-container" class="challenges-box">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </section>
+
+        <!-- CONTACTS SECTION -->
+        <section id="contacts" class="content-section">
+            <h2>Emergency Contacts</h2>
+            <p class="section-desc">Standard Indian emergency helplines. Save these numbers for urgent assistance.</p>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <h3>National Emergency Number</h3>
+                    <p class="contact-number">112</p>
+                    <p class="contact-detail">Single emergency helpline for police, fire, and health services.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Disaster Management Helpline</h3>
+                    <p class="contact-number">1078</p>
+                    <p class="contact-detail">National Disaster Management Authority helpline.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Police</h3>
+                    <p class="contact-number">100</p>
+                    <p class="contact-detail">Immediate police assistance.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Fire Services</h3>
+                    <p class="contact-number">101</p>
+                    <p class="contact-detail">Fire outbreak and rescue operations.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Ambulance</h3>
+                    <p class="contact-number">102</p>
+                    <p class="contact-detail">Medical emergencies and ambulance dispatch.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- EMERGENCY MODE OVERLAY -->
+    <div id="emergency-overlay" class="emergency-overlay hidden">
+        <div class="emergency-overlay-content">
+            <div class="emergency-overlay-header">
+                <h2>Emergency Quick Help Mode</h2>
+                <button id="close-emergency-mode" class="close-btn">Close X</button>
+            </div>
+            <p class="emergency-warning-text">Immediate actions and contacts for active crisis situations.</p>
+            
+            <div class="emergency-overlay-grid">
+                <div class="emergency-panel">
+                    <h3>Key Helplines</h3>
+                    <ul class="emergency-list">
+                        <li><strong>All-in-One Emergency:</strong> 112</li>
+                        <li><strong>Disaster Helpline:</strong> 1078</li>
+                        <li><strong>Ambulance:</strong> 102</li>
+                        <li><strong>Fire Service:</strong> 101</li>
+                    </ul>
+                </div>
+                <div class="emergency-panel">
+                    <h3>Immediate Actions</h3>
+                    <ul class="emergency-list">
+                        <li>Stay calm and follow official announcements.</li>
+                        <li>Move away from damaged structures or flooded zones.</li>
+                        <li>Keep your emergency kit or ID documents accessible.</li>
+                        <li>Check on family members and neighbors if safe.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="disclaimer-text"><strong>Educational Disclaimer:</strong> This application provides general preparedness information. During an actual emergency, follow instructions from local authorities and official emergency services.</p>
+            <div class="credits">
+                <p>College Community Engagement Project</p>
+                <p>Developed by: <strong>Samar Shirke</strong> and <strong>Himanshu Gaikar</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
